@@ -1,0 +1,13 @@
+- name: Deploy Flask Docker App
+  hosts: web
+  become: yes
+  tasks:
+    - name: Pull Docker Image
+      shell: docker pull sumeetp111/flask-devops-app:latest
+
+    - name: Remove old container if running
+      shell: docker rm -f flask-app || true
+
+    - name: Run Flask Container
+      shell: docker run -d -p 80:5000 --name flask-app YOUR_DOCKER_HUB_USER/flask-devops-app:latest
+
