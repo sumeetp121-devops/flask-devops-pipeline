@@ -9,5 +9,5 @@
       shell: docker rm -f flask-app || true
 
     - name: Run Flask Container
-      shell: docker run -d -p 80:5000 --name flask-app YOUR_DOCKER_HUB_USER/flask-devops-app:latest
+      shell: docker run -d -p 80:5000 --name flask-app sumeetp121-devops/flask-devops-app:latest
 
