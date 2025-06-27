@@ -1,2 +1,2 @@
 [web]
-oraclelinux ansible_host=127.0.0.1 ansible_port=2222 ansible_user=sumeet ansible_become=true
+oraclelinux ansible_host=127.0.0.1 ansible_port=2222 ansible_user=sumeet ansible_become=true ansible_become_method=sudo
