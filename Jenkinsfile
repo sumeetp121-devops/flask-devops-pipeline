@@ -26,7 +26,11 @@ pipeline {
 
         stage('Deploy with Ansible') {
             steps {
-                sh 'ansible-playbook deploy.yml -i inventory'
+               sh '''
+                    echo "[INFO] Disabling SSH host key checking..."
+                    export ANSIBLE_HOST_KEY_CHECKING=False
+                    ansible-playbook -i inventory deploy.yml
+                '''
             }
         }
     }
